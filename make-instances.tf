@@ -14,8 +14,8 @@ provider "aws" {
 resource "aws_instance" "builder" {
   ami = "ami-0bd9c26722573e69b"
   instance_type = "t3.micro"
+  security_groups = ["sg-05252fc253494d7e5"]
   key_name = "newkey1"
-  security_groups = ["group1"]
   subnet_id = "subnet-d9825094"
   associate_public_ip_address = true
   tags = {
@@ -26,7 +26,7 @@ resource "aws_instance" "builder" {
 resource "aws_instance" "web" {
   ami = "ami-0bd9c26722573e69b"
   instance_type = "t3.micro"
-  security_groups = ["group1"]
+  security_groups = ["sg-05252fc253494d7e5"]
   key_name = "newkey1"
   subnet_id = "subnet-d9825094"
   associate_public_ip_address = true
