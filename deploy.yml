@@ -20,7 +20,7 @@
 
     - name: Pull docker image
       docker_image:
-        name: docker push murashovs/web:latest
+        name: murashovs/web:latest
         source: pull
 
     - name: run docker container
