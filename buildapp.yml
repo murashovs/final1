@@ -51,7 +51,7 @@
 
 
     - name: Make docker image and push it
-      command: docker build -t murashovt:latest .
+      command: docker build -t murashovt:latest /home/ubuntu/src
 
       #docker_image:
        # name: murashovs/webapp
