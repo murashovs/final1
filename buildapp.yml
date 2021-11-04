@@ -19,7 +19,12 @@
       pip:
         name: docker
         state: present
-        executable: pip3
+      #  executable: pip3
+
+    - name: Start docker service
+      service:
+        name: docker
+        state: started
 
     - name: Clone git
       git:
