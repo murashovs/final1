@@ -33,11 +33,6 @@ pipeline {
              sh 'ansible-playbook -i hosts deploy.yml'
       }
      }
-    stage ('Terminate EC2 builder instance ') {
-      steps {
-             sh 'terraform destroy -target aws_instance.builder'
-      }
-     }
 
     }
 
