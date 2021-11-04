@@ -42,4 +42,5 @@
         force_tag: yes
         build:
           path: /
+        source: build
 
