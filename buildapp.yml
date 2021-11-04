@@ -15,12 +15,7 @@
         state: present
         update_cache: yes
 
-    - name: remove possible conflicting packages
-      pip:
-        name: docker-py
-        state: absent
-
-    - name: Checkout docker
+    - name: Checkout docker (phyton)
       pip:
         name: docker
         state: present
