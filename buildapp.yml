@@ -45,7 +45,7 @@
     - name: Synchronize Dockerfile.
       synchronize:
         src: Dockerfile
-        dest: /home/ubuntu/src
+        dest: /home/ubuntu/src/target
       # delegate_to: "{{ inventory_hostname }}"
 
 
