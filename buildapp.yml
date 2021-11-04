@@ -63,4 +63,4 @@
        # source: build
 
     - name: PUSH docker image
-      command: docker image push murashovs/web:latest /home/ubuntu/src/target
+      command: docker image push murashovs/web:latest
