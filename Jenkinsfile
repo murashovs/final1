@@ -33,6 +33,11 @@ pipeline {
              sh 'ansible-playbook deploy.yml -i hosts --become-user ubuntu --private-key /root/.ssh/ser2.pem'
       }
      }
+    stage ('Terminate EC2 builder instance ') {
+      steps {
+             sh 'terraform destroy -target aws_instance.builder'
+      }
+     }
 
     }
 
