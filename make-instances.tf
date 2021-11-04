@@ -35,6 +35,6 @@ resource "aws_instance" "web" {
   }
 
   provisioner "local-exec" {
-    command = "sleep 180; sed -i \"/builder/a ${aws_instance.builder.public_ip} ansible_ssh_user=ubuntu\" hosts; sed -i \"/web/a ${aws_instance.web.public_ip} ansible_ssh_user=ubuntu\" hosts"
+    command = "sed -i \"/builder/a ${aws_instance.builder.public_ip} ansible_ssh_user=ubuntu\" hosts; sed -i \"/web/a ${aws_instance.web.public_ip} ansible_ssh_user=ubuntu\" hosts"
   }
 }
