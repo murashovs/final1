@@ -20,9 +20,11 @@
         name: docker-py
         state: absent
 
-    - name: Checkout docker-py
+    - name: Checkout docker
       pip:
         name: docker
+        state: present
+
 
     - name: Clone git
       git:
