@@ -6,7 +6,7 @@ pipeline {
     stage ('Get git repository') {
       steps {
                 git 'https://github.com/murashovs/final.git'
-      }
+            }
       }
 
     stage ('Make EC2 instances') {
@@ -20,11 +20,12 @@ pipeline {
       steps {
               echo 'Wait 2 minutes'
               sleep 120
-
+              sh 'cp hosts /etc/ansible'
       }
      }
     stage ('Build APP from sources, make and pull docker image with web environment') {
       steps {
+
              sh 'ansible-playbook buildapp.yml -i hosts'
       }
     }
