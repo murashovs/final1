@@ -1,6 +1,8 @@
 ---
 - name: Make war from sources
   hosts: builder
+  becomeUser: "ubuntu"
+  become: yes
 
   tasks:
     - name: Checkout pkgs is presents
