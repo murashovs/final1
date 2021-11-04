@@ -15,9 +15,14 @@
         state: present
         update_cache: yes
 
-    - name: Checkout docker-py
+    - name: remove possible conflicting packages
       pip:
         name: docker-py
+        state: absent
+
+    - name: Checkout docker-py
+      pip:
+        name: docker
 
     - name: Clone git
       git:
