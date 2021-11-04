@@ -1,5 +1,6 @@
 provider "aws" {
   region = "eu-north-1"
+  shared_credentials_file = "/home/ubuntu/.aws/credentials"
   profile = "default"
 }
 
