@@ -11,6 +11,7 @@
           - docker.io
           - default-jdk
           - maven
+          - pip
         state: present
         update_cache: yes
 
