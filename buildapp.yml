@@ -22,7 +22,7 @@
         chdir: /home/ubuntu/src
 
     - name: Login DockerHub
-      dpcker_login:
+      docker_login:
         username: murashovs
         password: 9a8dfb44-b795-4fe4-be77-501203f2289b
 
