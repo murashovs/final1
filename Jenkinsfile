@@ -2,7 +2,7 @@ pipeline {
   agent any
 
   stages {
-
+/*
     stage ('Get git repository') {
       steps {
                 git 'https://github.com/murashovs/final.git'
@@ -21,7 +21,7 @@ pipeline {
               echo 'Wait 2 minutes'
               sleep 120
       }
-     }
+     } */
     stage ('Build APP from sources, make and pull docker image with web environment') {
       steps {
 
