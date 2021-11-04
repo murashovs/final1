@@ -1,0 +1,37 @@
+---
+- name: Make war from sources
+  hosts: builder
+
+  tasks:
+    - name: Checkout pkgs is presents
+      apt:
+        pkg:
+          - docker.io
+          - default-jdk
+          - maven
+        state: present
+
+    - name: Clone git
+      git:
+        repo: https://github.com/boxfuse/boxfuse-sample-java-war-hello
+        dest: /home/ubuntu/src
+
+    - name: Build app
+      shell: mvn package
+      args:
+        chdir: /home/ubuntu/src
+
+    - name: Login DockerHub
+      dpcker_login:
+        username: murashovs
+        password: 9a8dfb44-b795-4fe4-be77-501203f2289b
+
+    - name: Make docker image and push it
+      docker_image:
+        name: murashovs/webapp
+        tag: latest
+        push: yes
+        force_tag: yes
+        build:
+          path: /
+
