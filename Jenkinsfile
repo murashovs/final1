@@ -25,12 +25,12 @@ pipeline {
     stage ('Build APP from sources, make and pull docker image with web environment') {
       steps {
 
-             sh 'ansible-playbook buildapp.yml -i hosts --become-user ubuntu --private-key /root/.ssh/ser2.pem'
+             sh 'ansible-playbook buildapp.yml -i hosts --become-user ubuntu --private-key /var/lib/jenkins/ser2.pem'
       }
     }
     stage ('Deploy WEB container') {
       steps {
-             sh 'ansible-playbook deploy.yml -i hosts --become-user ubuntu --private-key /root/.ssh/ser2.pem'
+             sh 'ansible-playbook deploy.yml -i hosts --become-user ubuntu --private-key /var/lib/jenkins/ser2.pem'
       }
      }
     stage ('Terminate EC2 builder instance ') {
