@@ -50,8 +50,8 @@
 
 
 
-    - name: Make docker image and push it
-      command: docker build -t murashovt:latest /home/ubuntu/src/target
+    - name: Make docker image
+      command: docker build -t murashovs/web:latest /home/ubuntu/src/target
 
       #docker_image:
        # name: murashovs/webapp
@@ -62,3 +62,5 @@
         #  path: /
        # source: build
 
+    - name: PUSH docker image
+      command: docker image push murashovs/web:latest /home/ubuntu/src/target
