@@ -27,6 +27,6 @@
       docker_container:
         name: webapp
         state: started
-        image: docker push murashovs/web:latest
+        image: murashovs/web:latest
         ports:
           - "8080:8080"
