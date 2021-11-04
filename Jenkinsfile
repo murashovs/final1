@@ -12,8 +12,8 @@ pipeline {
     stage ('Make EC2 instances') {
       steps {
               sh 'terraform init'
-              sh 'terraform plan -out=tfplan -input=false'
-              sh 'terraform apply -input=false tfplan'
+              sh 'terraform plan -out instances.tfplan'
+              sh 'terraform apply -auto-approve'
       }
      }
     stage ('Wait for instances preparation') {
