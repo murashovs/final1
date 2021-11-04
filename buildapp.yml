@@ -1,7 +1,7 @@
 ---
 - name: Make war from sources
   hosts: builder
-  become: yes
+
 
   tasks:
     - name: Checkout pkgs is presents
