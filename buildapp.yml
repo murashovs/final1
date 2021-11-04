@@ -16,10 +16,10 @@
         update_cache: yes
 
    - name: Checkout docker (phyton)
-     pip:
-       name: docker
-       state: present
-       executable: pip3
+       pip:
+        name: docker
+        state: present
+        executable: pip3
 
     - name: Clone git
       git:
