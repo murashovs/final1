@@ -1,0 +1,32 @@
+---
+- name: Deploy tomcat and APP from container
+  hosts: web
+  become: yes
+  become_user: root
+
+  tasks:
+    - name: Checkout pkgs is presents
+      apt:
+        pkg:
+          - docker.io
+          - python3-pip
+        state: present
+        update_cache: yes
+
+    - name: Checkout docker (phyton)
+      pip:
+        name: docker
+        state: present
+
+    - name: Pull docker image
+      docker_image:
+        name: docker push murashovs/web:latest
+        source: pull
+
+    - name: run docker container
+      docker_container:
+        name: boxfuse
+        state: started
+        image: docker push murashovs/web:latest
+        ports:
+          - "8080:8080"

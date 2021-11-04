@@ -19,7 +19,6 @@
       pip:
         name: docker
         state: present
-      #  executable: pip3
 
     - name: Start docker service
       service:
