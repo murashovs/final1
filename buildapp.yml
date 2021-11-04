@@ -41,6 +41,14 @@
         username: murashovs
         password: 9a8dfb44-b795-4fe4-be77-501203f2289b
 
+
+    - name: Synchronize Dockerfile.
+      synchronize:
+        src: Dockerfile
+        dest: /home/ubuntu/src
+      # delegate_to: "{{ inventory_hostname }}"
+
+
     - name: Make docker image and push it
       docker_image:
         name: murashovs/webapp
