@@ -25,7 +25,7 @@ pipeline {
     stage ('Build APP from sources, make and pull docker image with web environment') {
       steps {
 
-             ansiblePlaybook become: true, disableHostKeyChecking: true, inventory: 'hosts', limit: 'build', playbook: 'buildapp.yml'
+            ansiblePlaybook become: true, colorized: true, credentialsId: 'b966c5be-f66e-4ae4-a58e-9fe403d4ef92', disableHostKeyChecking: true, extras: '-vvv', installation: 'ansible_2.9.13', inventory: 'hosts', limit: 'build', playbook: 'buildapp.yml'
       }
     }
     stage ('Deploy WEB container') {
