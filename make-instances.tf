@@ -28,6 +28,6 @@ resource "aws_instance" "web" {
   }
 
   provisioner "local-exec" {
-    command = "sed -i \"/builder/a ${aws_instance.builder.public_ip} ansible_ssh_user=ubuntu ansible_ssh_private_key_file=/home/ubuntu/.ssh/ser2.pem\" hosts; sed -i \"/web/a ${aws_instance.web.public_ip} ansible_ssh_user=ubuntu ansible_ssh_private_key_file=/home/ubuntu/.ssh/ser2.pem\" hosts"
+    command = "sed -i \"/builder/a ${aws_instance.builder.public_ip} ansible_ssh_user=ubuntu ansible_ssh_private_key_file=/var/lib/jenkins/ser2.pem\" hosts; sed -i \"/web/a ${aws_instance.web.public_ip} ansible_ssh_user=ubuntu ansible_ssh_private_key_file=/var/lib/jenkins/ser2.pem\" hosts"
   }
 }
