@@ -15,8 +15,8 @@
         state: present
         update_cache: yes
 
-   - name: Checkout docker (phyton)
-       pip:
+    - name: Checkout docker (phyton)
+      pip:
         name: docker
         state: present
         executable: pip3
