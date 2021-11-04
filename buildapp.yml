@@ -20,10 +20,10 @@
         name: docker
         state: present
 
-    - name: Start docker service
-      service:
-        name: docker
-        state: started
+#    - name: Start docker service
+ #     service:
+  #      name: docker
+   #     state: started
 
     - name: Clone git
       git:
@@ -40,14 +40,10 @@
         username: murashovs
         password: 9a8dfb44-b795-4fe4-be77-501203f2289b
 
-
     - name: Synchronize Dockerfile.
       synchronize:
         src: Dockerfile
         dest: /home/ubuntu/src/target
-      # delegate_to: "{{ inventory_hostname }}"
-
-
 
     - name: Make docker image
       command: docker build -t murashovs/web:latest /home/ubuntu/src/target
