@@ -11,6 +11,7 @@
           - default-jdk
           - maven
         state: present
+        update_cache: yes
 
     - name: Clone git
       git:
