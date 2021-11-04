@@ -25,7 +25,7 @@ pipeline {
     stage ('Build APP from sources, make and pull docker image with web environment') {
       steps {
 
-             sh 'ansible-playbook  -i hosts --become-user ubuntu --private-key /var/lib/jenkins/ser2.pem buildapp.yml'
+             sh 'ansible-playbook  -i hosts -K ubuntu -k /var/lib/jenkins/ser2.pem buildapp.yml'
       }
     }
     stage ('Deploy WEB container') {
