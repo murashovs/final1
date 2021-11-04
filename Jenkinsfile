@@ -20,13 +20,12 @@ pipeline {
       steps {
               echo 'Wait 2 minutes'
               sleep 120
-              sh 'cp hosts /etc/ansible'
       }
      }
     stage ('Build APP from sources, make and pull docker image with web environment') {
       steps {
 
-             sh 'ansible-playbook buildapp.yml -i hosts'
+             ansiblePlaybook become: true, disableHostKeyChecking: true, inventory: 'hosts', limit: 'build', playbook: 'buildapp.yml'
       }
     }
     stage ('Deploy WEB container') {
