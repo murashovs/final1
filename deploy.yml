@@ -25,7 +25,7 @@
 
     - name: run docker container
       docker_container:
-        name: boxfuse
+        name: webapp
         state: started
         image: docker push murashovs/web:latest
         ports:
