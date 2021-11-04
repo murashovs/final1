@@ -53,7 +53,7 @@
       docker_image:
         name: murashovs/webapp
         tag: latest
-        push: yes
+     #  push: yes
         force_tag: yes
         build:
           path: /
