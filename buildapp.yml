@@ -49,13 +49,16 @@
       # delegate_to: "{{ inventory_hostname }}"
 
 
+
     - name: Make docker image and push it
-      docker_image:
-        name: murashovs/webapp
-        tag: latest
-     #  push: yes
-        force_tag: yes
-        build:
-          path: /
-        source: build
+      command: docker build -t murashovt:latest
+
+      #docker_image:
+       # name: murashovs/webapp
+       # tag: latest
+       # push: yes
+       # force_tag: yes
+       # build:
+        #  path: /
+       # source: build
 
