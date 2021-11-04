@@ -11,15 +11,14 @@
           - docker.io
           - default-jdk
           - maven
- #        - python3-pip
+          - python3-pip
         state: present
         update_cache: yes
 
- #  - name: Checkout docker (phyton)
-  #   pip:
-   #    name: docker
-    #   state: present
-     #  executable: pip3
+   - name: Checkout docker (phyton)
+     pip:
+       name: docker
+
 
     - name: Clone git
       git:
