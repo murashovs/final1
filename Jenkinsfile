@@ -25,12 +25,12 @@ pipeline {
 
     stage ('Build APP from sources, make and pull docker image with web environment')
       steps {
-              ansible-playbook buildapp.yml -i hosts ubuntu --private-key /root/.ssh/ser2.pem
+             sh 'sudo ansible-playbook buildapp.yml -i hosts'
       }
 
     stage ('Deploy WEB container')
       steps {
-              ansible-playbook deploy.yml -i hosts ubuntu --private-key /root/.ssh/ser2.pem
+             sh 'sudo ansible-playbook deploy.yml -i hosts'
       }
 
 
