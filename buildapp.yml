@@ -20,10 +20,11 @@
         name: docker
         state: present
 
-#    - name: Start docker service
+#     - name: Start docker service
  #     service:
   #      name: docker
    #     state: started
+#
 
     - name: Clone git
       git:
