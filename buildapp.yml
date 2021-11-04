@@ -11,7 +11,7 @@
           - docker.io
           - default-jdk
           - maven
-          - pip
+          - python3-pip
         state: present
         update_cache: yes
 
