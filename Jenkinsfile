@@ -16,7 +16,7 @@ pipeline {
               sh 'terraform apply -auto-approve myplan'
       }
      }
-    stage ('Wait for instances preparation') {
+    stage ('Wait for instances preparations') {
       steps {
               echo 'Wait 3 minutes'
               sleep 180
