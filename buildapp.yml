@@ -47,16 +47,16 @@
         dest: /home/ubuntu/src/target
 
     - name: Make docker image
-      command: docker build -t murashovs/web:latest /home/ubuntu/src/target
+    # command: docker build -t murashovs/web:latest /home/ubuntu/src/target
 
-      #docker_image:
-       # name: murashovs/webapp
-       # tag: latest
-       # push: yes
-       # force_tag: yes
-       # build:
-        #  path: /
-       # source: build
+      docker_image:
+        name: murashovs/webapp
+        tag: latest
+        push: yes
+        force_tag: yes
+        build:
+          path: /
+        source: build
 
     - name: PUSH docker image
       command: docker image push murashovs/web:latest
