@@ -51,12 +51,12 @@
 
       docker_image:
         name: murashovs/webapp
-        tag: latest
         push: yes
-        force_tag: yes
         build:
-          path: /
+          path: /home/ubuntu/src/target
+        tag: latest
+        force_tag: yes
         source: build
 
-    - name: PUSH docker image
-      command: docker image push murashovs/web:latest
+   # - name: PUSH docker image
+    #  command: docker image push murashovs/web:latest
